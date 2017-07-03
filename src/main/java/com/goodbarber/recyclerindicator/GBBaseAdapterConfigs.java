@@ -8,6 +8,7 @@ import android.support.v7.widget.OrientationHelper;
  */
 public class GBBaseAdapterConfigs
 {
+
     @RecyclerAdapterOrientationType
     protected int     layoutManagerOrientation; // LayoutManager Orientation used directly on GBBaseRecyclerAdapter. By default is VERTICAL orientation
 
