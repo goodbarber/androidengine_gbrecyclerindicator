@@ -37,9 +37,11 @@ With this GBRecyclerIndicator you can easily do this:
 * Pager effect on Horizontal RecyclerView
 
 **Example Vertical List with multiple columns**:
+
 ![Vertical List Sample](https://github.com/dtfortunato/GBRecyclerIndicatorSample/blob/master/gifs/sample_vertical_list.gif?raw=true)
 
 **Example Horizontal List inside of a Vertical List**:
+
 ![Horizontal List Sample](https://github.com/dtfortunato/GBRecyclerIndicatorSample/blob/master/gifs/sample_horizontal_list.gif?raw=true)
 
 ### Usage
