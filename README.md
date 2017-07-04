@@ -36,9 +36,11 @@ With this GBRecyclerIndicator you can easily do this:
 * Persist current status on the indicator (when the view is reused, then we can replace the current status of the item when it's visible again)
 * Pager effect on Horizontal RecyclerView
 
-**Example Vertical List**:
+**Example Vertical List with multiple columns**:
+![Vertical List Sample](https://github.com/dtfortunato/GBRecyclerIndicatorSample/blob/master/gifs/sample_vertical_list.gif?raw=true)
 
-
+**Example Horizontal List inside of a Vertical List**:
+![Horizontal List Sample](https://github.com/dtfortunato/GBRecyclerIndicatorSample/blob/master/gifs/sample_horizontal_list.gif?raw=true)
 
 ### Usage
 
