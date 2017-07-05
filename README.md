@@ -14,18 +14,19 @@ Android minSdkVersion: 16
 
 On root of the project change the file `build.gradle` and add this line on repositories:
 
-`allprojects {`
-    `repositories {`
-        `jcenter()`
-        `maven { url "https://jitpack.io" }`
-    `}`
-`}`
+`allprojects {
+    repositories {
+        jcenter()
+        maven { url "https://jitpack.io" }
+    }
+}`
 
 On `<ProjectName>/src/builde.gradle` add this line on _dependencies_:
 
-`compile 'com.github.dtfortunato:GBRecyclerIndicator:1.0'`
+`compile 'com.github.goodbarber:GBRecyclerIndicator:1.0'`
 
-Now it's ready to use the GBRecyclerIndicator lib
+Now it's ready to use the GBRecyclerIndicator lib.
+You can also check our sample here: https://github.com/goodbarber/GBRecyclerIndicatorSample
 
 ## Features
 
