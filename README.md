@@ -47,4 +47,4 @@ With this GBRecyclerIndicator you can easily do this:
 
 ### Usage
 
-We also published a sample project to you to easily try our library. Check it out here: https://github.com/dtfortunato/GBRecyclerIndicatorSample
+We also published a sample project to you to easily try our library. Check it out here: https://github.com/goodbarber/GBRecyclerIndicatorSample
