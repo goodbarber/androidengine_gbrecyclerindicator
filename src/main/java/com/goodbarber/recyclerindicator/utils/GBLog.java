@@ -6,7 +6,6 @@ import java.util.Arrays;
 
 /**
  * Utility class to perform log operations. It is basically a wrapper around android.util.Log.
- *
  * @author goodbarber
  */
 public class GBLog
