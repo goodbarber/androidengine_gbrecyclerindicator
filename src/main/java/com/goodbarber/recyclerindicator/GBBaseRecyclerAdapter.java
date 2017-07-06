@@ -38,6 +38,20 @@ public abstract class GBBaseRecyclerAdapter<T> extends RecyclerView.Adapter<GBRe
     // Listener
     private OnClickRecyclerAdapterViewListener onClickRecyclerAdapterViewListener;
 
+    public GBBaseRecyclerAdapter(Context activity, GBBaseAdapterConfigs adapterConfigs)
+    {
+        super();
+        this.mContext = activity;
+        this.mAdapterConfigs = adapterConfigs;
+        this.mSectionId = "";
+
+        // Init Collections
+        this.mMapUIParameters = new HashMap<>();
+        this.mListGBRecyclerViewIndicatores = new ArrayList<>();
+        this.mRecycleViewIndicatorTypes = new HashMap<>();
+        this.mListViewholdersWithLifecycle = new ArrayList<>();
+    }
+
     public GBBaseRecyclerAdapter(Context activity, GBBaseAdapterConfigs adapterConfigs, String sectionId)
     {
         super();
