@@ -467,6 +467,28 @@ public abstract class GBBaseRecyclerAdapter<T> extends RecyclerView.Adapter<GBRe
         }
     }
 
+    /**
+     * Used to delete one single element in the list
+     *
+     * @param gbIndicatorIndex index of the GBIndicator to remove
+     * @param doAnimation      true if the recycler view should animate the deletion. False otherwise
+     */
+    public void removeListIndicatorsAtIndex(int gbIndicatorIndex, boolean doAnimation)
+    {
+        mListGBRecyclerViewIndicatores.remove(gbIndicatorIndex);
+        if (doAnimation)
+        {
+            // Take in account possible post added cells like first cell or search cell.
+            int itemIndex = gbIndicatorIndex + getItemCount() - getGBItemsCount();
+            notifyItemRemoved(itemIndex);
+            notifyItemRangeChanged(itemIndex, getItemCount());
+        }
+        else
+        {
+            notifyDataSetChanged();
+        }
+    }
+
     public GBBaseAdapterConfigs getAdapterConfigs()
     {
         return mAdapterConfigs;
