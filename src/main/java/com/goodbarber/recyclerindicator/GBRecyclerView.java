@@ -216,7 +216,7 @@ public class GBRecyclerView extends RecyclerView
 
             }
 
-            else if (getSwipeHorizontalEffect() == SwipeHorizontalEffect.CAROUSEL_PAGER_EFFECT)
+            else if (getSwipeHorizontalEffect() == SwipeHorizontalEffect.CAROUSEL_PAGER_EFFECT && getAdapter() != null && getAdapter().getItemCount() > 2)
             {
                 LinearLayoutManager linearLayoutManager = (LinearLayoutManager) getLayoutManager();
                 //                int screenWidth = Resources.getSystem().getDisplayMetrics().widthPixels;
