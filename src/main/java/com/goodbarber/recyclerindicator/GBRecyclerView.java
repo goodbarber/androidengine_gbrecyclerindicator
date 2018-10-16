@@ -347,6 +347,14 @@ public class GBRecyclerView extends RecyclerView
         }
     }
 
+    public boolean isScrollable() {
+        return isScrollable;
+    }
+
+    public void setScrollable(boolean scrollable) {
+        isScrollable = scrollable;
+    }
+
     public enum SwipeHorizontalEffect
     {
         NONE, PAGER_EFFECT, CAROUSEL_PAGER_EFFECT
