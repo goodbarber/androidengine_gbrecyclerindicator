@@ -24,6 +24,9 @@ public class GBRecyclerView extends RecyclerView
     // GB Adapter
     private GBBaseRecyclerAdapter mGBAdapter;
 
+    // Configs
+    private boolean isScrollable;
+
     public GBRecyclerView(Context context)
     {
         super(context);
@@ -39,6 +42,37 @@ public class GBRecyclerView extends RecyclerView
         super(context, attrs, defStyle);
     }
 
+    /**
+     * Initialize Recycler view
+     */
+    private void init()
+    {
+        this.isScrollable = true;
+    }
+
+    @Override
+    public boolean canScrollHorizontally(int direction) {
+        if (isScrollable)
+        {
+            return super.canScrollHorizontally(direction);
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    @Override
+    public boolean canScrollVertically(int direction) {
+        if (isScrollable)
+        {
+            return super.canScrollVertically(direction);
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     @Override
     public void setAdapter(Adapter adapter)
