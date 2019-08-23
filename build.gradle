@@ -53,3 +53,8 @@ dependencies {
     implementation 'androidx.recyclerview:recyclerview:1.0.0'
     testImplementation 'junit:junit:4.12'
 }
+
+wrapper {
+    gradleVersion = "5.1.1"
+    distributionType = Wrapper.DistributionType.ALL
+}
