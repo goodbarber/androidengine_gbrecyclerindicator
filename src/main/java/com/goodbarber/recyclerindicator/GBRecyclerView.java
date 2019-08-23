@@ -1,14 +1,14 @@
 package com.goodbarber.recyclerindicator;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import com.goodbarber.recyclerindicator.utils.GBLog;
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by David Fortunato on 16/06/2016
@@ -132,7 +132,7 @@ public class GBRecyclerView extends RecyclerView
     public boolean fling(int velocityX, int velocityY)
     {
 
-        if ( (getSwipeHorizontalEffect() == SwipeHorizontalEffect.PAGER_EFFECT  || getSwipeHorizontalEffect() == SwipeHorizontalEffect.CAROUSEL_PAGER_EFFECT) && getLayoutManager() instanceof LinearLayoutManager &&
+        if ((getSwipeHorizontalEffect() == SwipeHorizontalEffect.PAGER_EFFECT  || getSwipeHorizontalEffect() == SwipeHorizontalEffect.CAROUSEL_PAGER_EFFECT) && getLayoutManager() instanceof LinearLayoutManager &&
                 ((LinearLayoutManager) getLayoutManager()).getOrientation() == HORIZONTAL)
         {
             LinearLayoutManager linearLayoutManager = (LinearLayoutManager) getLayoutManager();

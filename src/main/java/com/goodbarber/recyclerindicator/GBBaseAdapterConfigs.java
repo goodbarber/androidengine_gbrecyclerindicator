@@ -1,6 +1,7 @@
 package com.goodbarber.recyclerindicator;
 
-import android.support.v7.widget.OrientationHelper;
+
+import androidx.recyclerview.widget.OrientationHelper;
 
 /**
  * Created by David Fortunato on 16/06/2016
