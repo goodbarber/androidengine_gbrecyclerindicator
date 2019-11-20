@@ -30,16 +30,19 @@ public class GBRecyclerView extends RecyclerView
     public GBRecyclerView(Context context)
     {
         super(context);
+        this.init();
     }
 
     public GBRecyclerView(Context context, @Nullable AttributeSet attrs)
     {
         super(context, attrs);
+        this.init();
     }
 
     public GBRecyclerView(Context context, @Nullable AttributeSet attrs, int defStyle)
     {
         super(context, attrs, defStyle);
+        this.init();
     }
 
     /**
