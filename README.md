@@ -1,4 +1,4 @@
-GoodBarber Internal Librairies - Android GBRecyclerIndicator
+GoodBarber Internal Librairies - GBRecyclerIndicator
 ======================
 
 This library is used in the Android native engine of GoodBarber.
