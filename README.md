@@ -28,7 +28,7 @@ On `<ProjectName>/src/builde.gradle` add this line on _dependencies_:
 `compile 'com.github.goodbarber:android_GBRecyclerIndicator:1.1.5'`
 
 Now it's ready to use the GBRecyclerIndicator lib.
-You can also check our sample here: https://github.com/goodbarber/GBRecyclerIndicatorSample
+You can also check our sample.
 
 ## Features
 
@@ -49,4 +49,4 @@ With this GBRecyclerIndicator you can easily do this:
 
 ### Usage
 
-We also published a sample project to you to easily try our library. Check it out here: https://github.com/goodbarber/GBRecyclerIndicatorSample
+We also published a sample project in this repository for you to easily try our library.
