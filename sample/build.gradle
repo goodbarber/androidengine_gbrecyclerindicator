@@ -1,12 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    namespace = "com.goodbarber.recyclerindicator.sample"
+
+    compileSdk rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
     defaultConfig {
         applicationId "com.goodbarber.recyclerindicator.sample"
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -20,12 +23,5 @@ android {
 }
 
 dependencies {
-    implementation 'org.jetbrains:annotations-java5:15.0'
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
     implementation project(':recyclerindicator')
-
-    testCompile 'junit:junit:4.12'
 }

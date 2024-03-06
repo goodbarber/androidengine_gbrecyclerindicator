@@ -10,7 +10,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Android minSdkVersion: 16
+Android minSdkVersion: 21
 
 ### How to import dependency
 
@@ -25,7 +25,7 @@ On root of the project change the file `build.gradle` and add this line on repos
 
 On `<ProjectName>/src/builde.gradle` add this line on _dependencies_:
 
-`compile 'com.github.goodbarber:android_GBRecyclerIndicator:1.1.5'`
+`implementation 'com.github.goodbarber:android_GBRecyclerIndicator:1.1.6'`
 
 Now it's ready to use the GBRecyclerIndicator lib.
 You can also check our sample.
