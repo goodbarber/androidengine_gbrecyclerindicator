@@ -24,7 +24,9 @@ public class GBRecyclerViewHolder<ViewType extends View> extends RecyclerView.Vi
      */
     public boolean checkIfShouldInit(GBRecyclerViewIndicator newRecyclerViewIndicator)
     {
-        if(getCurrentRecyclerViewIndicator() == null || getCurrentRecyclerViewIndicator().getUIParamsId() != newRecyclerViewIndicator.getUIParamsId())
+        if(getCurrentRecyclerViewIndicator() == null || getCurrentRecyclerViewIndicator().getUIParamsId() == null ||
+                newRecyclerViewIndicator.getUIParamsId() == null ||
+                !getCurrentRecyclerViewIndicator().getUIParamsId().contentEquals(newRecyclerViewIndicator.getUIParamsId()))
         {
             setCurrentRecyclerViewIndicator(newRecyclerViewIndicator);
             return true;
