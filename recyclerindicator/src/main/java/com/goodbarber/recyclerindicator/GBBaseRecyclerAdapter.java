@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import androidx.annotation.NonNull;
+import androidx.lifecycle.Lifecycle;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -101,6 +102,7 @@ public abstract class GBBaseRecyclerAdapter<T> extends RecyclerView.Adapter<GBRe
             viewHolder = null;
         }
 
+
         // Add viewholder to HashSet
         if (viewHolder != null && viewHolder.getView() instanceof OnActivityLifecycleMethod)
         {
@@ -113,6 +115,9 @@ public abstract class GBBaseRecyclerAdapter<T> extends RecyclerView.Adapter<GBRe
     @Override
     public void onBindViewHolder(final GBRecyclerViewHolder holder, int position)
     {
+        holder.clearBindSubscriptions();
+        holder.setLifecycleState(holder.itemView.isAttachedToWindow() ? Lifecycle.State.RESUMED : Lifecycle.State.CREATED);
+
         final int listIndicatorPosition = getGBListIndicatorPosition(position);
 
         // Only refresh List Indicator views
@@ -202,6 +207,28 @@ public abstract class GBBaseRecyclerAdapter<T> extends RecyclerView.Adapter<GBRe
 
         }
 
+    }
+
+    @Override
+    public void onViewAttachedToWindow(@NonNull GBRecyclerViewHolder holder)
+    {
+        super.onViewAttachedToWindow(holder);
+        holder.setLifecycleState(Lifecycle.State.RESUMED);
+    }
+
+    @Override
+    public void onViewDetachedFromWindow(@NonNull GBRecyclerViewHolder holder)
+    {
+        super.onViewDetachedFromWindow(holder);
+        holder.setLifecycleState(Lifecycle.State.CREATED);
+    }
+
+    @Override
+    public void onViewRecycled(@NonNull GBRecyclerViewHolder holder)
+    {
+        super.onViewRecycled(holder);
+        holder.clearBindSubscriptions();
+        holder.setLifecycleState(Lifecycle.State.CREATED);
     }
 
     @Override

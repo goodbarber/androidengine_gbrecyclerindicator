@@ -1,19 +1,23 @@
 apply plugin: 'com.android.library'
-apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 28
-    buildToolsVersion "28.0.3"
+    namespace 'com.goodbarber.recyclerindicator'
+    compileSdk 35
 
     defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 28
+        minSdk 21
         versionCode 4
         versionName "1.1.5"
 
-        // testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -23,9 +27,12 @@ android {
 }
 
 dependencies {
-    // implementation fileTree(dir: 'libs', include: ['*.jar'])
-    // androidTestImplementation'androidx.test.ext:junit:1.1.1'
-    api 'androidx.appcompat:appcompat:1.0.2'
-    api 'androidx.recyclerview:recyclerview:1.0.0'
-    // testImplementation 'junit:junit:4.12'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.8.22'
+    api 'androidx.lifecycle:lifecycle-runtime-ktx:2.6.2'
+    api 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
+    api 'androidx.appcompat:appcompat:1.7.1'
+    api 'androidx.recyclerview:recyclerview:1.4.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
