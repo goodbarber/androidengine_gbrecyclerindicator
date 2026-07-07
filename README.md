@@ -10,22 +10,37 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Prerequisites
 
-Android minSdkVersion: 16
+Android minSdkVersion: 21
 
 ### How to import dependency
 
-On root of the project change the file `build.gradle` and add this line on repositories:
+In your root `build.gradle` (or `settings.gradle` with `dependencyResolutionManagement`), add JitPack to the repositories:
 
-`allprojects {
+```groovy
+allprojects {
     repositories {
-        jcenter()
+        google()
+        mavenCentral()
         maven { url "https://jitpack.io" }
     }
-}`
+}
+```
 
-On `<ProjectName>/src/builde.gradle` add this line on _dependencies_:
+In your module's `build.gradle`, add this line to _dependencies_:
 
-`compile 'com.github.goodbarber:android_GBRecyclerIndicator:1.1.5'`
+```groovy
+implementation 'com.github.goodbarber:androidengine_gbrecyclerindicator:1.2.0'
+```
+
+Or, if you use a version catalog (`libs.versions.toml`):
+
+```toml
+[versions]
+gbrecyclerindicator = "1.2.0"
+
+[libraries]
+goodbarber-gbrecyclerindicator = { module = "com.github.goodbarber:androidengine_gbrecyclerindicator", version.ref = "gbrecyclerindicator" }
+```
 
 Now it's ready to use the GBRecyclerIndicator lib.
 You can also check our sample.
@@ -38,6 +53,7 @@ With this GBRecyclerIndicator you can easily do this:
 * Easily handle different view types to be displayed on the RecyclerView
 * Persist current status on the indicator (when the view is reused, then we can replace the current status of the item when it's visible again)
 * Pager effect on Horizontal RecyclerView
+* Lifecycle-safe subscriptions for recycled cells: `GBRecyclerViewHolder` is a `LifecycleOwner`, and the `observeRecycled` / `launchRecycled` helpers bind LiveData observers and coroutines to the cell's on-screen lifecycle. Subscriptions pause when the cell scrolls off screen and resume when it comes back (including RecyclerView cache re-attach, with no rebind), and are cleared automatically on rebind/recycle — no manual teardown and no leaks.
 
 **Example Vertical List with multiple columns**:
 
