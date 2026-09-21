@@ -8,10 +8,13 @@ android {
 
     defaultConfig {
         minSdk 21
-        versionCode 5
-        versionName "1.2.0"
+        versionCode 6
+        versionName "1.2.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        // Ships the cell recycling keep rule to every consumer, see consumer-rules.pro.
+        consumerProguardFiles 'consumer-rules.pro'
     }
 
     compileOptions {
@@ -51,7 +54,7 @@ afterEvaluate {
                 from components.release
                 groupId = 'com.github.goodbarber'
                 artifactId = 'recyclerindicator'
-                version = '1.2.0'
+                version = '1.2.1'
             }
         }
     }
