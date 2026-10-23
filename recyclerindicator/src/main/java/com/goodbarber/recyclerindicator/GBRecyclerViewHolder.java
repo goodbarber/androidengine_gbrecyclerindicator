@@ -34,6 +34,31 @@ public class GBRecyclerViewHolder<ViewType extends View> extends RecyclerView.Vi
     public void setLifecycleState(Lifecycle.State state)
     {
         mLifecycleRegistry.setCurrentState(state);
+        recycledSubscriptions.setObserving(this, state.isAtLeast(Lifecycle.State.STARTED));
+    }
+
+    /**
+     * Makes the lifecycle follow the window attach state of the item view: RESUMED while attached, CREATED otherwise.
+     * The adapter callbacks are not enough: when the whole screen goes away (activity destroyed, fragment view
+     * destroyed, parent cell scrolled off) the RecyclerView is detached from the window with its cells still attached
+     * to it, the adapter is never told, only the views are. Called once, when the adapter creates the holder.
+     */
+    void followWindowAttachState()
+    {
+        itemView.addOnAttachStateChangeListener(new View.OnAttachStateChangeListener()
+        {
+            @Override
+            public void onViewAttachedToWindow(@NonNull View v)
+            {
+                setLifecycleState(Lifecycle.State.RESUMED);
+            }
+
+            @Override
+            public void onViewDetachedFromWindow(@NonNull View v)
+            {
+                setLifecycleState(Lifecycle.State.CREATED);
+            }
+        });
     }
 
     public void clearBindSubscriptions()

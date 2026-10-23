@@ -102,6 +102,11 @@ public abstract class GBBaseRecyclerAdapter<T> extends RecyclerView.Adapter<GBRe
             viewHolder = null;
         }
 
+        if (viewHolder != null)
+        {
+            viewHolder.followWindowAttachState();
+        }
+
 
         // Add viewholder to HashSet
         if (viewHolder != null && viewHolder.getView() instanceof OnActivityLifecycleMethod)
@@ -207,20 +212,6 @@ public abstract class GBBaseRecyclerAdapter<T> extends RecyclerView.Adapter<GBRe
 
         }
 
-    }
-
-    @Override
-    public void onViewAttachedToWindow(@NonNull GBRecyclerViewHolder holder)
-    {
-        super.onViewAttachedToWindow(holder);
-        holder.setLifecycleState(Lifecycle.State.RESUMED);
-    }
-
-    @Override
-    public void onViewDetachedFromWindow(@NonNull GBRecyclerViewHolder holder)
-    {
-        super.onViewDetachedFromWindow(holder);
-        holder.setLifecycleState(Lifecycle.State.CREATED);
     }
 
     @Override
